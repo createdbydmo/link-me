@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        window.onload = function() {
+            // Get the "url" parameter from the query string
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetUrl = urlParams.get('url');  // Extract the URL parameter
+
+            if (targetUrl) {
+                // Decode the URL to ensure it's a proper link
+                const decodedUrl = decodeURIComponent(targetUrl);
+
+                // Redirect to the target URL
+                window.location.replace(decodedUrl);
+            } else {
+                // Optional: Default redirect if no URL parameter is provided
+                window.location.replace('https://example.com');
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>
